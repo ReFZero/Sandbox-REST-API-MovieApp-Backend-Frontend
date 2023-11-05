@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista filmow</title>
+</head>
+<body>
+<h1>Lista filmow</h1>
+
+<table>
+    <tr>
+        <th>Tytul</th>
+        <th>Rok produkcji</th>
+        <th>Rezyser</th>
+    </tr>
+    <tr th:each="movie : ${movies}">
+        <td th:text="${movie.getTitle()}"></td>
+        <td th:text="${movie.getYearProduction()}"></td>
+        <td th:text="${movie.getDirector()}"></td>
+        <table>
+            <tr>
+                <th>Autor</th>
+                <th>Tresc</th>
+            </tr>
+            <tr th:each="review : ${movie.reviews}">
+                <td th:text="${review.getAuthor()}"></td>
+                <td th:text="${review.getContent()}"></td>
+            </tr>
+        </table>
+        <p>**********************************************</p>
+    </tr>
+</table>
+<form th:action="@{/movies/add}" th:object="${newMovie}" method="post">
+    <p>Tytul: <input type="text" th:field="*{title}"></p>
+    <p>Rok produkcji: <input type="text" th:field="*{yearProduction}"></p>
+    <p>Rezyser: <input type="text" th:field="*{director}"></p>
+    <p><input type="submit" value="Dodaj nowy film"></p>
+</form>
+</body>
+</html>

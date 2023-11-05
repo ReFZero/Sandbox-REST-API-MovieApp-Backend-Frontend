@@ -11,14 +11,15 @@
 - Lombok
 - Thymeleaf
 #### Zmiany w ostatnim commicie:
-- Podstawowe operacje CRUD
-- Dodanie wyjatków
-#### Dodatkowe informacje:
-- Brak
-#### TO DO:
 - Połaczenie Backend - Frontend:
   - Połaczenie Backendu z Thymeleaf
+#### Dodatkowe informacje:
+- Podstawowe operacje CRUD
+- Dodano wyjatki
+#### TO DO:
+- Połaczenie Backend - Frontend:
   - Połaczenie Backendu z Angular
+  - Połaczenie Backendu z React
 - Dodanie Spring Security
 - Dodanie Swagger
 
